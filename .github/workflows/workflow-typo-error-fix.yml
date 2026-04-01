@@ -1,4 +1,4 @@
-name: Workflow error fix
+name: Workflow typo error fix
 on: push
 jobs:
   run:
