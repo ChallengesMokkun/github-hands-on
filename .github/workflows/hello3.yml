@@ -1,0 +1,9 @@
+name: workflow hello3
+on: [push]
+jobs:
+  hello3:
+    runs-on: ubuntu-latest
+    steps:
+      - run: date
+      - run: echo "hello 3"
+      - uses: actions/checkout@v6
