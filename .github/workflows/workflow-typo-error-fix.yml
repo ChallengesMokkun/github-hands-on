@@ -1,7 +1,0 @@
-name: Workflow typo error fix
-on: push
-jobs:
-  run:
-    runs-on: ubuntu-latest
-    steps:
-      - run: date

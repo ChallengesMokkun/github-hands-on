@@ -1,0 +1,8 @@
+name: read context
+on: push
+jobs:
+  read-context:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "${{ github.actor }}"
+

@@ -1,7 +1,0 @@
-name: Workflow indent error fix
-on: push
-jobs:
-  run:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "YAML syntax error fix"
