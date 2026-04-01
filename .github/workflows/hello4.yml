@@ -1,0 +1,9 @@
+name: workflow hello 4
+on: [push]
+jobs:
+  hello4:
+    runs-on: ubuntu-latest
+    steps:
+      - run: timedatectl set-timezone Asia/Tokyo
+      - run: date
+      - uses: actions/checkout@v6
