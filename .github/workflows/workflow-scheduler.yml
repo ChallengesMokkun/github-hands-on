@@ -1,7 +1,7 @@
 name: workflow scheduler
 on:
   schedule:
-    - cron: '* /5 * * * *'
+    - cron: '*/5 * * * *'
 jobs:
   regular-job:
     runs-on: ubuntu-latest
