@@ -1,14 +1,14 @@
 name: Env value
 on: push
+env:
+  API_BASE: http://localhost:8000
+  CLIENT_ID: client_a
+
 jobs:
-  env-job:
-    runs-on: ubuntu-latest
+  fe:
     env:
-      BRANCH: main
+      CLIENT_ID: client_b
+    runs-on: ubuntu-latest
     steps:
-      - run: echo "abc"
-      - run: echo "${{ env.BRANCH }}"
-      - run: date
-      - uses: actions/checkout@v6
-        with:
-          ref: ${{ env.BRANCH }}
+      - run: echo "${{ env.API_BASE }}"
+      - run: echo "${{ env.CLIENT_ID }}"
