@@ -4,6 +4,6 @@ jobs:
   view-values:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ GITHUB_SHA }}"
-      - run: echo "${{ RUNNER_OS }}"
-      - run: echo "${{ GITHUB_RUN_ID }}"
+      - run: echo "$GITHUB_SHA"
+      - run: echo "$RUNNER_OS"
+      - run: echo "$GITHUB_RUN_ID"
