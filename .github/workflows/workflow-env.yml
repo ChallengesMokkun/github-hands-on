@@ -10,5 +10,5 @@ jobs:
       CLIENT_ID: client_b
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ env.API_BASE }}"
-      - run: echo "${{ env.CLIENT_ID }}"
+      - run: echo "$API_BASE"
+      - run: echo "$CLIENT_ID"
