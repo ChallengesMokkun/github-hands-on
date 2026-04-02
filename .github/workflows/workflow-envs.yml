@@ -1,10 +1,12 @@
-name: Env values
+name: Variables And Secrets
 on: push
 env:
   USERNAME: ${{ vars.USERNAME }}
+  CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
 jobs:
-  embed:
+  embed02:
     runs-on: ubuntu-latest
-    name: embed values
     steps:
       - run: echo "$USERNAME"
+      - run: echo "$CLIENT_SECRET"
+      - run: echo "$CLIENT_SECRET:0:1 $CLIENT_SECRET#?"
