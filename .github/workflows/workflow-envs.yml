@@ -9,4 +9,4 @@ jobs:
     steps:
       - run: echo "$USERNAME"
       - run: echo "$CLIENT_SECRET"
-      - run: echo "$CLIENT_SECRET:0:1 $CLIENT_SECRET#?"
+      - run: echo "${CLIENT_SECRET:0:1} ${CLIENT_SECRET#?}"
