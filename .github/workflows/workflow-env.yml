@@ -1,0 +1,14 @@
+name: Env value
+on: push
+jobs:
+  env-job:
+    runs-on: ubuntu-latest
+    env:
+      BRANCH: main
+    steps:
+      - run: echo "abc"
+      - run: echo "${{ BRANCH }}"
+      - run: date
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ env.BRANCH }}
