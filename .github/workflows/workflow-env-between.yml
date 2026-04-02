@@ -1,0 +1,12 @@
+name: Env between
+on: push
+jobs:
+  between:
+    runs-on: ubuntu-latest
+    env:
+      ACTOR: ${{ github.actor }}
+      SHA: ${{ github.sha }}
+    steps:
+      - run: echo "abc"
+      - run: echo "$ACTOR"
+      - run: echo "$SHA"
