@@ -1,0 +1,9 @@
+name: Env values
+on: push
+env:
+  USERNAME: ${{ vars.USERNAME }}
+jobs:
+  embed:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "$USERNAME"
