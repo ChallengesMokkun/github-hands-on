@@ -4,7 +4,7 @@ env:
   MY_PARAM: aiueo
   LUCK: ${{ vars.LUCK }}
   API_KEY: ${{ secrets.API_KEY }}
-  EVENT: ${{ github.event }}
+  REF_NAME: ${{ github.ref_name }}
 jobs:
   env-02:
     runs-on: ubuntu-latest
@@ -12,5 +12,5 @@ jobs:
       - run: echo "$MY_PARAM"
       - run: echo "$LUCK"
       - run: echo "$API_KEY"
-      - run: echo "$EVENT"
+      - run: echo "$REF_NAME"
       - run: echo "$GITHUB_SHA"
