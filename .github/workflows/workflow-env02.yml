@@ -1,0 +1,16 @@
+name: Workflow env 02
+on: push
+env:
+  MY_PARAM: aiueo
+  LUCK: ${{ vars.LUCK }}
+  API_KEY: ${{ secrets.API_KEY }}
+  EVENT: ${{ github.event }}
+jobs:
+  env-02:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "$MY_PARAM"
+      - run: echo "$LUCK"
+      - run: echo "$API_KEY"
+      - run: echo "$EVENT"
+      - run: echo "$GITHUB_SHA"
