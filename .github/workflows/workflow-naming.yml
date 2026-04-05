@@ -1,9 +1,0 @@
-name: Workflow naming
-on: push
-jobs:
-  naming:
-    name: Super Useful Job
-    runs-on: ubuntu-latest
-    steps:
-      - name: Amazing Script
-        run: echo "Hello"
