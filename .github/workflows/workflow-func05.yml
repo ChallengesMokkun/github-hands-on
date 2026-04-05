@@ -6,3 +6,6 @@ jobs:
     steps:
       - run: echo "Hello"
         if: ${{ contains(github.run_id, '1') }}
+      - run: echo "$CONTEXT"
+        env:
+          CONTEXT: ${{ toJSON(github) }}
