@@ -1,6 +1,6 @@
 name: Workflow naming 02
 on: push
-run-name: Run by @${{ github.actor }}
+run-name: Push to @${{ github.ref_name }}
 jobs:
   naming02:
     name: naming Job 02
