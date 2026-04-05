@@ -1,0 +1,9 @@
+name: Workflow beyond step
+run-name: beyond step
+on: push
+jobs:
+  beyond-step:
+    runs-on: ubuntu-latest
+    steps:
+      - run: export RESULT="hello"
+      - run: echo "$RESULT"
