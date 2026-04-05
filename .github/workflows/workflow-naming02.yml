@@ -8,3 +8,7 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "Hello"
+      - name: Check github context
+        run: echo "$CONTEXT"
+        env:
+          CONTEXT: ${{ toJSON(github) }}
