@@ -1,0 +1,8 @@
+name: Workflow func05
+on: push
+jobs:
+  if-statement:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello"
+        if: ${{ contains(github.run_id, '1') }}
