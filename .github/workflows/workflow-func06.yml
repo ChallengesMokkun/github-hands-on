@@ -1,0 +1,9 @@
+name: Workflow func06
+on: push
+jobs:
+  status-check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 1
+      - run: echo "Hello"
+        if: ${{ failure() }}
