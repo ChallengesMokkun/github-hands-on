@@ -1,0 +1,8 @@
+name: Workflow func07
+on: push
+jobs:
+  if-statement02:
+    if: ${{ github.actor == 'octocat' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello"
