@@ -5,5 +5,9 @@ jobs:
   beyond-step:
     runs-on: ubuntu-latest
     steps:
-      - run: export RESULT="hello"
+      - id: source
+        run: echo "result=hello" >> "$GITHUB_OUTPUT"
       - run: echo "$RESULT"
+        env:
+          RESULT: ${{ steps.source.outputs.result }}
+      
