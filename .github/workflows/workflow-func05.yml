@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello"
-        if: ${{ contains(github.run_id, '1') }}
+        if: ${{ contains(github.run_id, '8') }}
       - run: echo "$CONTEXT"
         env:
           CONTEXT: ${{ toJSON(github) }}
