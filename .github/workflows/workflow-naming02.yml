@@ -1,6 +1,6 @@
 name: Workflow naming 02
 on: push
-run-name: Push to @${{ github.ref_name }}
+run-name: Push to ${{ github.ref_name }} branch
 jobs:
   naming02:
     name: naming Job 02
