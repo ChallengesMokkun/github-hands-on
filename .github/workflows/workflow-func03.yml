@@ -1,9 +1,0 @@
-name: Workflow func03
-on: push
-jobs:
-  echo-context:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "$CONTEXT"
-        env:
-          CONTEXT: ${{ toJSON(github) }}
