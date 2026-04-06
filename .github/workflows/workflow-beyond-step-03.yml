@@ -1,0 +1,9 @@
+name: Workflow beyond step 03
+run-name: github env variables
+on: push
+jobs:
+  github-env:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "RESULT=hello" >> "$GITHUB_ENV"
+      - run: echo "$RESULT"
