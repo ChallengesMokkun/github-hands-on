@@ -1,0 +1,15 @@
+name: Workflow beyond step 05
+run-name: step 05
+on: push
+jobs:
+  pass-env-beyond-step:
+    runs-on: ubuntu-latest
+    steps:
+      - id: prepare_env
+        name: prepare env
+        run: echo "token=123456abcde" >> "$GITHUB_OUTPUT"
+      - id: access_env
+        name: access env
+        run: echo "$TOKEN"
+        env:
+          TOKEN: ${{ steps.prepare_env.outputs.token }}
