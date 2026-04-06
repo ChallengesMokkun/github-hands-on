@@ -1,0 +1,16 @@
+name: Workflow github api 01
+run-name: Request Github API 01
+on: pull_request
+jobs:
+  request-github-api:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+      - id: request_github_api
+        name: Request Github API
+        run: gh pr comment "$GITHUB_HEAD_REF" --body "Hello, $GITHUB_ACTOR"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
