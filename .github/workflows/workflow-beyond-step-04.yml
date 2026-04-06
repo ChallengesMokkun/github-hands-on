@@ -12,4 +12,4 @@ jobs:
         name: use env
         run: echo "$CREDENTIALS"
         env:
-          CREDENTIALS: ${{ steps.save_env.output.credentials }}
+          CREDENTIALS: ${{ steps.save_env.outputs.credentials }}
