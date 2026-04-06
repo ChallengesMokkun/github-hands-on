@@ -1,0 +1,15 @@
+name: Workflow beyond step 04
+on: push
+run-name: env appropriate
+jobs:
+  beyond:
+    runs-on: ubuntu-latest
+    steps:
+      - id: save_env
+        name: save variables
+        run: echo "credentials=abcedf" >> "GITHUB_OUTPUTS"
+      - id: use_env
+        name: use env
+        run: echo "$CREDENTIALS"
+        env:
+          CREDENTIALS: ${{ steps.save_env.output.credentials }}
