@@ -1,12 +1,28 @@
 package main
 
+import "math/rand"
+
 const (
 	Even     = "even"
 	Odd      = "odd"
 	FizzBuzz = "FizzBuzz"
 	Fizz     = "Fizz"
 	Buzz     = "Buzz"
+
+	SuperLucky  = "大吉"
+	MiddleLucky = "中吉"
+	LittleLucky = "小吉"
+	Lucky       = "吉"
+	NotLucky    = "凶"
 )
+
+var Fortune = []string{
+	SuperLucky,
+	MiddleLucky,
+	LittleLucky,
+	Lucky,
+	NotLucky,
+}
 
 func EvenOrOdd(num int) string {
 	if num%2 == 0 {
@@ -27,4 +43,8 @@ func GenerateFizzBuzz(num int) []string {
 		}
 	}
 	return slice
+}
+
+func TellFortune() string {
+	return Fortune[rand.Intn(len(Fortune))]
 }

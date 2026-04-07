@@ -1,6 +1,7 @@
 package main
 
 import (
+	"slices"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -22,4 +23,8 @@ func TestGenerateFizzBuzz(t *testing.T) {
 		}
 	}
 	assert.Equal(t, num/15, fizzBuzzNum)
+}
+
+func TestTellFortune(t *testing.T) {
+	assert.True(t, slices.Contains(Fortune, TellFortune()))
 }
