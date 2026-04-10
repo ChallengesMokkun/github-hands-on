@@ -9,11 +9,12 @@ const (
 	Fizz     = "Fizz"
 	Buzz     = "Buzz"
 
-	SuperLucky  = "大吉"
-	MiddleLucky = "中吉"
-	LittleLucky = "小吉"
-	Lucky       = "吉"
-	NotLucky    = "凶"
+	SuperLucky   = "大吉"
+	MiddleLucky  = "中吉"
+	LittleLucky  = "小吉"
+	Lucky        = "吉"
+	LuckyUnlucky = "吉凶"
+	UnLucky      = "凶"
 )
 
 var Fortune = []string{
@@ -21,7 +22,8 @@ var Fortune = []string{
 	MiddleLucky,
 	LittleLucky,
 	Lucky,
-	NotLucky,
+	LuckyUnlucky,
+	UnLucky,
 }
 
 func EvenOrOdd(num int) string {
