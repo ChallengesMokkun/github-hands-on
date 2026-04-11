@@ -1,17 +1,20 @@
-name: Matrix Multi dimension
-run-name: Matrix Multi Dimension Workflow
+name: Manual matrix
+run-name: Matrix Set Version Manual
 on: push
 jobs:
   print-job:
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest]
-        version: [24, 25]
+        include:
+          - os: ubuntu-latest
+            version: 24
+          - os: macos-latest
+            version: 25
     timeout-minutes: 3
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.version }}
-      - name: Check Version
+      - name: Check node version
         run: echo "$RUNNER_OS" && node --version
