@@ -1,0 +1,17 @@
+name: Matrix Multi dimension
+run-name: Matrix Multi Dimension Workflow
+on: push
+jobs:
+  print-job:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        version: [24, 26]
+    timeout-minutes: 3
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.version }}
+      - name: Check Version
+        run: echo "$RUNNER_OS" && node --version
