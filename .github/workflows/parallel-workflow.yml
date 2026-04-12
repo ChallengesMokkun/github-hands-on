@@ -1,0 +1,22 @@
+name: Parallel Workflow
+run-name: Parallel
+on: push
+jobs:
+  first-job:
+    timeout-minutes: 3
+    runs-on: ubuntu-latest
+    steps:
+      - name: First job
+        run: sleep 10 && echo "First job"
+  second-job:
+    timeout-minutes: 3
+    runs-on: ubuntu-latest
+    steps:
+      - name: Second job
+        run: sleep 10 && echo "Second job"
+  third-job:
+    timeout-minutes: 3
+    runs-on: ubuntu-latest
+    steps:
+      - name: Third job
+        run: sleep 10 && echo "Third job"
