@@ -53,11 +53,11 @@ runs:
       shell: bash
     - id: mul
       name: 1.5 * 2
-      run: echo "mul=$((1.5 * 2))" >> "$GITHUB_OUTPUT"
+      run: echo "mul=$(echo "1.5 * 2" | bc)" >> "$GITHUB_OUTPUT"
       if: ${{ inputs.do_mul == 'true' }}
       shell: bash
     - id: div
       name: 1 / 0.25
-      run: echo "div=$((1 / 0.25))" >> "$GITHUB_OUTPUT"
+      run: echo "div=$(echo "1 / 0.25" | bc)" >> "$GITHUB_OUTPUT"
       if: ${{ inputs.do_div == 'true' }}
       shell: bash
