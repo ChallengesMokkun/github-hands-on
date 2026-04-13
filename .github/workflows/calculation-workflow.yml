@@ -22,6 +22,6 @@ jobs:
           echo "$DIV_RESULT"
         env:
           ADD_RESULT: ${{ steps.calculation.outputs.result_add }}
-          SUB_RESULT: ${{ steps.calculaton.outputs.result_sub }}
+          SUB_RESULT: ${{ steps.calculation.outputs.result_sub }}
           MUL_RESULT: ${{ steps.calculation.outputs.result_mul }}
           DIV_RESULT: ${{ steps.calculation.outputs.result_div }}

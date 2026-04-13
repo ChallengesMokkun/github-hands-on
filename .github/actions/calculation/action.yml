@@ -33,27 +33,31 @@ outputs:
     value: ${{ steps.mul.outputs.mul }}
     description: |
       This is mul result
+  result_div:
+    value: ${{ steps.div.outputs.div }}
+    description: |
+      This is div result
 
 runs:
   using: composite
   steps:
     - id: add
       name: 1 + 1
-      run: echo "add=$(1 + 1)" >> "$GITHUB_OUTPUT"
+      run: echo "add=$((1 + 1))" >> "$GITHUB_OUTPUT"
       if: ${{ inputs.do_add == 'true' }}
       shell: bash
     - id: sub
       name: 5 - 3
-      run: echo "sub=$(5 - 3)" >> "$GITHUB_OUTPUT"
+      run: echo "sub=$((5 - 3))" >> "$GITHUB_OUTPUT"
       if: ${{ inputs.do_sub == 'true' }}
       shell: bash
     - id: mul
       name: 1.5 * 2
-      run: echo "mul=$(1.5 * 2)" >> "$GITHUB_OUTPUT"
+      run: echo "mul=$((1.5 * 2))" >> "$GITHUB_OUTPUT"
       if: ${{ inputs.do_mul == 'true' }}
       shell: bash
     - id: div
       name: 1 / 0.25
-      run: echo "div=$(1 / 0.25)" >> "$GITHUB_OUTPUT"
+      run: echo "div=$((1 / 0.25))" >> "$GITHUB_OUTPUT"
       if: ${{ inputs.do_div == 'true' }}
       shell: bash
