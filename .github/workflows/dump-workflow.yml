@@ -10,7 +10,7 @@ jobs:
       - uses: ./.github/actions/dump/
         id: dump
         with:
-          enable-context: 'true'
+          enable-context: 'false'
       - name: dump value
         run: echo "$DATE"
         env:
