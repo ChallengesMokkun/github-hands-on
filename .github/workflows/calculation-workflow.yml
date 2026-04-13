@@ -11,8 +11,9 @@ jobs:
         name: calculation
         uses: ./.github/actions/calculation/
         with:
-          do_mul: 'true'
-          do_div: 'true'
+          do_add: 'true'
+          do_mul: 'false'
+          do_div: 'false'
       - id: calculation_result
         name: print calculation results
         run: |
