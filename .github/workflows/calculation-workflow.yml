@@ -1,0 +1,27 @@
+name: Calculation Workflow
+run-name: Calculation
+on: push
+jobs:
+  calculation_job:
+    timeout-minutes: 3
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - id: calculation
+        name: calculation
+        uses: ./.github/actions/calculation/
+        with:
+          do_mul: 'true'
+          do_div: 'true'
+      - id: calculation_result
+        name: print calculation results
+        run: |
+          echo "$ADD_RESULT"
+          echo "$SUB_RESULT"
+          echo "$MUL_RESULT"
+          echo "$DIV_RESULT"
+        env:
+          ADD_RESULT: ${{ steps.calculation.outputs.result_add }}
+          SUB_RESULT: ${{ steps.calculaton.outputs.result_sub }}
+          MUL_RESULT: ${{ steps.calculation.outputs.result_mul }}
+          DIV_RESULT: ${{ steps.calculation.outputs.result_div }}

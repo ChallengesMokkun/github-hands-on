@@ -1,0 +1,59 @@
+name: Calculation Action
+description: |
+  This is Calculation Action
+inputs:
+  do_add:
+    default: 'false'
+    required: true
+    description: |
+      This is add flag
+  do_sub:
+    default: 'false'
+    required: false
+    description: |
+      This is subtraction flag
+  do_mul:
+    required: true
+    description: |
+      This is multiplication flag
+  do_div:
+    required: true
+    description: |
+      This is division flag
+outputs:
+  result_add:
+    value: ${{ steps.add.outputs.add }}
+    description: |
+      This is add result
+  result_sub:
+    value: ${{ steps.sub.outputs.sub }}
+    description: |
+      This is sub result
+  result_mul:
+    value: ${{ steps.mul.outputs.mul }}
+    description: |
+      This is mul result
+
+runs:
+  using: composite
+  steps:
+    - id: add
+      name: 1 + 1
+      run: echo "add=$(1 + 1)" >> "$GITHUB_OUTPUT"
+      if: ${{ inputs.do_add == 'true' }}
+      shell: bash
+    - id: sub
+      name: 5 - 3
+      run: echo "sub=$(5 - 3)" >> "$GITHUB_OUTPUT"
+      if: ${{ inputs.do_sub == 'true' }}
+      shell: bash
+    - id: mul
+      name: 1.5 * 2
+      run: echo "mul=$(1.5 * 2)" >> "$GITHUB_OUTPUT"
+      if: ${{ inputs.do_mul == 'true' }}
+      shell: bash
+    - id: div
+      name: 1 / 0.25
+      run: echo "div=$(1 / 0.25)" >> "$GITHUB_OUTPUT"
+      if: ${{ inputs.do_div == 'true' }}
+      shell: bash
