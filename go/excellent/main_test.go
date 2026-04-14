@@ -8,7 +8,7 @@ import (
 )
 
 func TestEvenOrMain(t *testing.T) {
-	result := EvenOrOdd(10)
+	result := EvenOrOdd(11)
 	assert.Equal(t, Even, result)
 }
 
