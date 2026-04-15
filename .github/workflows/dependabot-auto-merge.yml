@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - run: gh pr merge "$GITHUB_HEAD_REF" --merge --auto
+      - run: gh pr merge "$GITHUB_HEAD_REF" --merge
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GITHUB_ACTOR: ${{ github.actor }}
