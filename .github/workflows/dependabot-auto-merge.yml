@@ -5,7 +5,7 @@ jobs:
   dependabot-auto-merge:
     timeout-minutes: 8
     runs-on: ubuntu-latest
-    if: ${{ github.actor == 'dependabot' }}
+    if: ${{ github.actor == 'dependabot[bot]' }}
     permissions:
       contents: write
       pull-requests: write
