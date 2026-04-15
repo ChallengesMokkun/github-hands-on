@@ -1,0 +1,16 @@
+name: Dependabot Auto Merge Workflow
+run-name: Dependabot Auto Merge
+on: pull_request
+jobs:
+  dependabot-auto-merge:
+    timeout-minutes: 8
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v6
+      - run: gh pr merge "$GITHUB_HEAD_REF" --merge
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
