@@ -21,8 +21,10 @@ jobs:
           echo "$SUB_RESULT"
           echo "$MUL_RESULT"
           echo "$DIV_RESULT"
+          echo "$GITHUB_ACTOR"
         env:
           ADD_RESULT: ${{ steps.calculation.outputs.result_add }}
           SUB_RESULT: ${{ steps.calculation.outputs.result_sub }}
           MUL_RESULT: ${{ steps.calculation.outputs.result_mul }}
           DIV_RESULT: ${{ steps.calculation.outputs.result_div }}
+          GITHUB_ACTOR: ${{ github.actor }}
