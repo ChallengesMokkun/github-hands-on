@@ -1,0 +1,9 @@
+name: Injection test
+run-name: Injection (risky test)
+on: pull_request
+jobs:
+  inject:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+      - run: echo "${{ github.event.pull_request.title }}"
